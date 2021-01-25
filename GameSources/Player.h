@@ -7,7 +7,14 @@
 #include "stdafx.h"
 
 namespace basecross{
-
+	class Player : public GameObject
+	{
+	public :
+		Player(const std::shared_ptr<Stage>& stage)
+			: GameObject(stage)
+		{
+		}
+	};
 
 }
 //end basecross
