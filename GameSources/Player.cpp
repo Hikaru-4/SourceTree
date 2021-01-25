@@ -10,7 +10,7 @@ namespace basecross{
 	void Player::OnCreate()
 	{
 		auto drawComp = AddComponent<PNTStaticDraw>();
-		drawComp->SetMeshResource(L"DEFAULT_CUBE");
+		drawComp->SetMeshResource(L"DEFAULT_SPHERE");
 	}
 }
 //end basecross
