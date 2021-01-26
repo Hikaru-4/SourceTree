@@ -15,6 +15,11 @@ namespace basecross{
 
 		SetAlphaActive(true);
 	}
+
+	void Player::OnUpdate()
+	{
+
+	}
 }
 //end basecross
 
