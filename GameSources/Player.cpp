@@ -39,6 +39,19 @@ namespace basecross{
 		}
 
 		transComp->SetPosition(pos);
+		if (pad.wPressedButtons & XINPUT_GAMEPAD_A)
+		{
+			MakeBlock(pos);
+		}
+	}
+
+	void Player::MakeBlock(const Vec3& position)
+	{
+		auto stage = GetStage();
+		auto block = stage->AddGameObject<Block>(); // �u���b�N��X�e�[�W�ɒǉ�����
+
+		auto blockTrans = block->GetComponent<Transform>();
+		blockTrans->SetPosition(position); // �u���b�N�̈ʒu��w��̈ʒu�Ɉړ�����
 	}
 }
 //end basecross

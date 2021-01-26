@@ -17,6 +17,9 @@ namespace basecross{
 
 		void OnCreate() override;
 		void OnUpdate() override;
+
+		private : 
+		void MakeBlock(const Vec3& position);
 	};
 
 }
