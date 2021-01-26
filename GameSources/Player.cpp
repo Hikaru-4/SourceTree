@@ -38,7 +38,21 @@ namespace basecross{
 			pos += Vec3(1.0f, 0.0f, 0.0f);
 		}
 
+		if (pad.wPressedButtons & XINPUT_GAMEPAD_DPAD_UP)
+		{
+			// ƒvƒŒƒCƒ„[‚ğã‚ÉˆÚ“®‚³‚¹‚é
+			pos += Vec3(0.0f, 1.0f, 0.0f);
+		}
+
+		if (pad.wPressedButtons & XINPUT_GAMEPAD_DPAD_DOWN)
+		{
+			// ƒvƒŒƒCƒ„[‚ğ‰º‚ÉˆÚ“®‚³‚¹‚é
+			pos += Vec3(0.0f, -1.0f, 0.0f);
+		}
+
 		transComp->SetPosition(pos);
+
+		// ƒuƒƒbƒN‚ğ’u‚­
 		if (pad.wPressedButtons & XINPUT_GAMEPAD_A)
 		{
 			MakeBlock(pos);
@@ -48,10 +62,10 @@ namespace basecross{
 	void Player::MakeBlock(const Vec3& position)
 	{
 		auto stage = GetStage();
-		auto block = stage->AddGameObject<Block>(); // ï¿½uï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½Xï¿½eï¿½[ï¿½Wï¿½É’Ç‰ï¿½ï¿½ï¿½ï¿½ï¿½
+		auto block = stage->AddGameObject<Block>(); // ƒuƒƒbƒN‚ğƒXƒe[ƒW‚É’Ç‰Á‚·‚é
 
 		auto blockTrans = block->GetComponent<Transform>();
-		blockTrans->SetPosition(position); // ï¿½uï¿½ï¿½ï¿½bï¿½Nï¿½ÌˆÊ’uï¿½ï¿½wï¿½ï¿½ÌˆÊ’uï¿½ÉˆÚ“ï¿½ï¿½ï¿½ï¿½ï¿½
+		blockTrans->SetPosition(position); // ƒuƒƒbƒN‚ÌˆÊ’u‚ğw’è‚ÌˆÊ’u‚ÉˆÚ“®‚·‚é
 	}
 }
 //end basecross
