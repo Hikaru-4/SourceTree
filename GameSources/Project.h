@@ -13,6 +13,8 @@
 #include "Character.h"
 #include "Player.h"
 #include "Block.h"
+#include "StageMap.h"
+#include "StageObject.h"
 
 
 
