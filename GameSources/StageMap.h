@@ -6,7 +6,7 @@ namespace basecross {
 	// ステージの配置を管理するためのクラス
 	class StageMap : public GameObject
 	{
-		std::vector < std::shared_ptr<StageObject>> m_stageObject;
+		std::vector < std::shared_ptr<StageObject>> m_stageObjects;
 
 	public : 
 		StageMap(const std::shared_ptr<Stage>& stage)
@@ -22,7 +22,11 @@ namespace basecross {
 			auto object = ObjectFactory::Create<T>();
 			auto objectTrans = object->GetComponent<Transform>();
 			objectTrans->SetPosition(position);
+
 			m_stageObjects.push_back(object);
 		}
+
+		void Load(const std::wstring& filename);
+		void Save(const std::wstring& filename);
 	};
 }

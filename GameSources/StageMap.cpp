@@ -4,9 +4,19 @@
 namespace basecross {
 	void StageMap::OnDraw()
 	{
-		for(auto& obj : m_stageObject)
+		for(auto& obj : m_stageObjects)
 		{
 			obj->OnDraw();
 		}
 	}
+
+	void StageMap::Load(const std::wstring& filename)
+	{
+
+	}
+	void StageMap::Save(const std::wstring& filename)
+	{
+
+	}
+
 }
