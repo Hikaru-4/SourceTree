@@ -61,11 +61,13 @@ namespace basecross{
 
 	void Player::MakeBlock(const Vec3& position)
 	{
-		auto stage = GetStage();
-		auto block = stage->AddGameObject<Block>(); // ブロックをステージに追加する
+		auto stage = dynamic_pointer_cast<GameStage>(GetStage());
+		if (!stage) {
+			return;
+		}
 
-		auto blockTrans = block->GetComponent<Transform>();
-		blockTrans->SetPosition(position); // ブロックの位置を指定の位置に移動する
+		auto stageMap = stage->GetStageMap();
+		stageMap->AddStageObject<Block>(position);
 	}
 }
 //end basecross

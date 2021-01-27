@@ -17,10 +17,12 @@ namespace basecross {
 		void OnDraw() override;
 
 		template<class T>
-		void AddStageObject() 
+		void AddStageObject(const Vec3& position) 
 		{
-			ObjectFactory::Create<T>();
-			m_stageObjects.push_back();
+			auto object = ObjectFactory::Create<T>();
+			auto objectTrans = object->GetComponent<Transform>();
+			objectTrans->SetPosition(position);
+			m_stageObjects.push_back(object);
 		}
 	};
 }
