@@ -28,11 +28,15 @@ namespace basecross {
 
 	void GameStage::OnCreate() {
 		try {
+			auto& app = App::GetApp();
+			auto path = app->GetDataDirWString();
+
 			//ビューとライトの作成
 			CreateViewLight();
 
 			// ステージを管理する
 			auto stageMap = AddGameObject<StageMap>();
+			stageMap->Load(path + L"stage.stg");
 			m_stageMap = stageMap;
 
 			// プレイヤーを追加

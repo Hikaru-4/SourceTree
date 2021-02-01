@@ -19,7 +19,7 @@ namespace basecross {
 		template<class T>
 		void AddStageObject(const Vec3& position) 
 		{
-			auto object = ObjectFactory::Create<T>();
+			auto object = ObjectFactory::Create<T>(GetStage());
 			auto objectTrans = object->GetComponent<Transform>();
 			objectTrans->SetPosition(position);
 
@@ -27,6 +27,8 @@ namespace basecross {
 		}
 
 		void Load(const std::wstring& filename);
-		void Save(const std::wstring& filename);
+		void SaveTextFile(const std::wstring& filename);
+		void SaveBinaeyFile(const std::wstring& filename);
+
 	};
 }
