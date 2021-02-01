@@ -15,6 +15,7 @@
 #include "Block.h"
 #include "StageMap.h"
 #include "StageObject.h"
+#include "Grass.h"
 
 
 

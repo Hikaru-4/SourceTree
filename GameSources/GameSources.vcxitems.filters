@@ -10,6 +10,15 @@
     <Filter Include="Block">
       <UniqueIdentifier>{b5d3412c-19c8-42e2-8038-a343a58cd0cd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="StageMap">
+      <UniqueIdentifier>{8869f100-eb07-4a8a-89e6-8bb3e4568f26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StageObject">
+      <UniqueIdentifier>{4ba76103-f7b6-412f-ba5d-f1e702e89dc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Grass">
+      <UniqueIdentifier>{30ee0343-993e-41a9-a55c-647f5165072b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Character.h">
@@ -36,6 +45,15 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Block.h">
       <Filter>Block</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)StageMap.h">
+      <Filter>StageMap</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)StageObject.h">
+      <Filter>StageObject</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Grass.h">
+      <Filter>Grass</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Character.cpp">
@@ -61,6 +79,15 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Block.cpp">
       <Filter>Block</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)StageMap.cpp">
+      <Filter>StageMap</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)StageObject.cpp">
+      <Filter>StageObject</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Grass.cpp">
+      <Filter>Grass</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

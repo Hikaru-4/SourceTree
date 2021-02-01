@@ -5,7 +5,7 @@
 
 #pragma once
 #include "stdafx.h"
-#include"StageMap.h"
+#include "StageMap.h"
 
 namespace basecross {
 
@@ -16,7 +16,7 @@ namespace basecross {
 		//ビューの作成
 		void CreateViewLight();
 
-		// ステージマップオブジェトへのポインタ
+		// ステージマップオブジェクトへのポインタ
 		std::shared_ptr<StageMap> m_stageMap;
 
 	public:
@@ -32,7 +32,5 @@ namespace basecross {
 		}
 	};
 
-
 }
 //end basecross
-
