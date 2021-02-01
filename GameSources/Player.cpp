@@ -6,7 +6,7 @@
 #include "stdafx.h"
 #include "Project.h"
 
-namespace basecross {
+namespace basecross{
 	void Player::OnCreate()
 	{
 		auto drawComp = AddComponent<PNTStaticDraw>();
@@ -69,7 +69,8 @@ namespace basecross {
 
 				auto stageMap = stage->GetStageMap();
 				auto path = App::GetApp()->GetDataDirWString();
-				stageMap->Save(L"c:\\stage.txt");
+				stageMap->SaveTextFile(path + L"c:\\stage.txt");
+				stageMap->SaveBinaeyFile(path + L"stage.stg");
 			}
 		}
 	}
