@@ -6,7 +6,7 @@
 #include "stdafx.h"
 #include "Project.h"
 
-namespace basecross{
+namespace basecross {
 	void Player::OnCreate()
 	{
 		auto drawComp = AddComponent<PNTStaticDraw>();
@@ -57,18 +57,33 @@ namespace basecross{
 		{
 			MakeBlock(pos);
 		}
-	}
 
-	void Player::MakeBlock(const Vec3& position)
-	{
-		auto stage = dynamic_pointer_cast<GameStage>(GetStage());
-		if (!stage) {
-			return;
+		// ステージのセーブ
+		if (pad.wPressedButtons & XINPUT_GAMEPAD_START)
+		{
+			{
+				auto stage = dynamic_pointer_cast<GameStage>(GetStage());
+				if (!stage) {
+					return;
+				}
+
+				auto stageMap = stage->GetStageMap();
+				auto path = App::GetApp()->GetDataDirWString();
+				stageMap->Save(L"c:\\stage.txt");
+			}
 		}
-
-		auto stageMap = stage->GetStageMap();
-		stageMap->AddStageObject<Block>(position);
 	}
-}
+		void Player::MakeBlock(const Vec3 & position)
+		{
+			auto stage = dynamic_pointer_cast<GameStage>(GetStage());
+			if (!stage) 
+			{
+				return;
+			}
+
+			auto stageMap = stage->GetStageMap();
+			stageMap->AddStageObject<Block>(position);
+		}
+	}
 //end basecross
 
