@@ -18,6 +18,7 @@ namespace basecross {
 	{
 		std::ofstream ofs(filename);
 		if (ofs.fail()) {
+			MessageBox(0, L"保存用ファイルを開けませんでした", L"failed", 0);
 			return;
 		}
 
@@ -26,8 +27,10 @@ namespace basecross {
 			auto objTrans = obj->GetComponent<Transform>();
 			auto objPos = objTrans->GetPosition();
 
-			ofs << objPos.x << L"," << objPos.y << L"," << objPos.z << std::endl;
+			ofs << objPos.x << "," << objPos.y << L"," << objPos.z << std::endl;
 		}
+
+		MessageBox(0, L"ステージ配置を保存しました", L"succeeded", 0);
 		ofs.close();
 	}
 
